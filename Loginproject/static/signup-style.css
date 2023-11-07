@@ -1,0 +1,1337 @@
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateY(20px);
+    }
+    60% {
+        transform: translateY(15px);
+    }
+}
+@keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(5px);
+    }
+    40% {
+        transform: translateX(20%);
+    }
+    60% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+
+html{
+    background: #21041E;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    background: linear-gradient(121deg, #21041E 20%, rgba(19, 6, 20, 0.79) 51.12%, rgba(83, 13, 89, 0.86) 55.21%,rgba(19, 6, 20, 0.79) 70%,rgba(83, 13, 89, 0.86) 80.21%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+section {
+    width: auto;
+    height: auto;
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(121deg, #21041E 20%, rgba(19, 6, 20, 0.79) 51.12%, rgba(83, 13, 89, 0.86) 55.21%,rgba(19, 6, 20, 0.79) 70%,rgba(83, 13, 89, 0.86) 80.21%, rgba(0, 0, 0, 0.62) 100%);
+}
+
+
+
+/* Add this to your style.css file */
+.alert {
+    background-color: transparent !important; /* Make background transparent */
+    color: white !important; /* Set text color to white */
+    text-align: center; /* Center the text */
+    border: none !important; /* Removes any borders */
+}
+
+/* If you have specific classes for different alert types, you may want to style them specifically */
+.alert-success, .alert-danger, .alert-warning, .alert-info {
+    background-color: transparent !important;
+    color: white !important;
+    text-align: center;
+    border: none !important;
+}
+
+/* Style the close button if needed */
+.alert .close {
+    color: white !important;
+    opacity: 1; /* Make sure it's fully visible */
+    background:transparent;
+}
+
+/* Ensure the strong tag has white text */
+.alert strong {
+    color: white !important;
+}
+
+
+
+
+
+
+.nav-link {
+    margin-top: 20px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    transition: transform 0.5s ease;
+}
+
+.nav-link:hover {
+    animation: bounce 1.2s ease infinite;
+}
+
+
+
+.navbar.bg-body-tertiary {
+    background-color: transparent!important;
+
+ 
+}
+
+.navbar {
+    color: #fff; 
+
+}
+
+.navbar-brand, 
+.navbar-nav .nav-link {
+    color: #ffff !important;
+    font-family: 'Jaldi', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight:lighter;
+    line-height: normal;
+    
+}
+
+
+
+/* Center the navbar items */
+.navbar-collapse .navbar-nav {
+    margin-top: 10px;
+    margin-left: 6%;
+    width: 100%;
+    justify-content: center;
+}
+
+/* Position the logo/icon to the left */
+.navbar-brand {
+    margin-left: 10px;
+    color: #FFF;
+    font-size: 30px;
+    position: absolute;
+    left: 0;
+}
+
+.navbar-nav{
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+}
+
+
+.navbar-toggler {
+    position: absolute;
+    right: 10px;  /* Adjust as per your design needs */
+    top: 10px;   /* Adjust as per your design needs */
+}
+
+
+#Login, #Register{
+    background-color: transparent;
+    border: none;
+    border: #FFF;
+    border-radius: 40px;
+    color: rgb(255, 255, 255);
+    margin-right: 1px;
+    cursor: pointer;
+}
+
+#Register{
+    border: 2px solid white;
+}
+    
+
+#button-container {
+    position: relative;
+    display: inline-flex;
+    
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 20px;
+    color: wheat;
+    margin-right: 1px;
+    cursor: pointer;
+    position: relative;
+    z-index: 1; /* Ensure buttons are above the moving border */
+}
+
+.navbar-brand:hover{
+    opacity: 0.8;
+    rotate: 3deg;
+}
+
+
+.Login-form-main{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    color: white;
+}
+
+.Register-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    color: white;
+}
+
+
+
+
+
+/* Add this to your existing CSS 
+.login-form, .register-form {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.login-form {
+    opacity: 1; /* Make login form visible by default */
+
+
+
+
+form{
+    margin-top:2% ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+
+}
+p{
+    font-size: 60px;
+    background: linear-gradient(to bottom right, #28F2FF 0%, rgba(140, 152, 255, 0.67) 11%, rgba(19, 235, 249, 0.47) 24%, rgba(152, 37, 206, 0.29) 36%, #A98FD4 50%) bottom right / 50% 50% no-repeat, linear-gradient(to bottom left, #28F2FF 0%, rgba(140, 152, 255, 0.67) 11%, rgba(19, 235, 249, 0.47) 24%, rgba(152, 37, 206, 0.29) 36%, #A98FD4 50%) bottom left / 50% 50% no-repeat, linear-gradient(to top left, #28F2FF 0%, rgba(140, 152, 255, 0.67) 11%, rgba(19, 235, 249, 0.47) 24%, rgba(152, 37, 206, 0.29) 36%, #A98FD4 50%) top left / 50% 50% no-repeat, linear-gradient(to top right, #28F2FF 0%, rgba(140, 152, 255, 0.67) 11%, rgba(19, 235, 249, 0.47) 24%, rgba(152, 37, 206, 0.29) 36%, #A98FD4 50%) top right / 50% 50% no-repeat;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title{
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    font-family: Javanese Text;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.transparent-input {
+    border-radius: 50px;
+    border-top: 3px solid #908FDD;
+    border-bottom: 3px solid #908FDD;
+    background-color: transparent;
+
+}
+
+.input-container {
+    
+    position: relative;
+    color: #FFF;
+    font-family: Jaldi;
+    font-size: 18px;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 25px;
+}
+.input-container label{
+    opacity: 0.9;
+}
+input[type="password"] {
+    width: 466px;
+    height: 52px;
+    font-family: Jaldi;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    width: 100%; /* Make the input expand to fill its container */
+    color: #FFFFFF;
+    border-bottom: 3px solid #ac70c8; /* Input bottom border */
+    border-top: 3px solid #ac70c8;    /* Input Top border */    
+}
+
+input[type="confirmPassword"] {
+    width: 466px;
+    height: 52px;
+    font-family: Jaldi;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    width: 100%; /* Make the input expand to fill its container */
+    color: #FFFFFF;
+    border-bottom: 3px solid #ac70c8; /* Input bottom border */
+    border-top: 3px solid #ac70c8;    /* Input Top border */    
+}
+
+input[type="text"] {
+    width: 466px;
+    height: 52px;
+    font-family: Jaldi;
+    font-size: 15px;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    width: 100%; /* Make the input expand to fill its container */
+    color: #FFFFFF;
+    border-bottom: 3px solid #ac70c8; /* Input bottom border */
+    border-top: 3px solid #ac70c8;    /* Input Top border */    
+}
+
+input[type="email"] {
+    font-family: Jaldi;
+    font-size: 15px;
+    width: 466px;
+    height: 52px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    outline: none;
+    width: 100%; /* Make the input expand to fill its container */
+    color: #FFFFFF; /* Text color */
+    border-bottom: 3px solid #ac70c8; /* Input bottom border */
+    border-top: 3px solid #ac70c8;    /* Input Top border */
+    
+}
+
+
+
+/* Add a hover effect to expand the custom border */
+.input-container:hover .custom-border {
+    color: #FFFFFF;
+    width: 100%;
+}
+
+/* Add styles for when the input is focused */
+input[type="password"]:focus {
+    outline:  0.1px solid #ac70c8;
+    box-shadow: none; 
+    color: #FFFFFF;
+    background: transparent; /* White background on focus */
+}
+
+input[type="confirmPassword"]:focus {
+    outline:  0.1px solid #ac70c8;
+    box-shadow: none; 
+    color: #FFFFFF;
+    background: transparent; /* White background on focus */
+}
+
+input[type="text"]:focus {
+    outline:  0.1px solid #ac70c8;
+    box-shadow: none; 
+    color: #FFFFFF;
+    background: transparent; /* White background on focus */
+}
+input[type="email"]:focus {
+    outline:  0.1px solid #ac70c8;
+    box-shadow: none; 
+    color: #FFFFFF;
+    background: transparent; /* White background on focus */
+}
+
+
+#show-password{
+    position: absolute;
+    right: 15px; /* Or right: 10px; depending on the icon position */
+    top: 70%;
+    transform: translateY(-50%);
+    color: #555;
+    display: block; 
+}
+ 
+#hide-password{
+    position: absolute;
+    right: 15px; /* Or right: 10px; depending on the icon position */
+    top: 70%;
+    transform: translateY(-50%);
+    color: #555;
+    display: none;
+}
+
+
+
+.Button.container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Submit.btn{
+    border-radius: 40px;
+    background-color: #6C0C8D;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2px);
+    width: 134px;
+    height: 57px;
+    transition: all 0.5s ease;
+    font-family: Jaldi;
+    font-size: 20px;
+}
+
+.Submit.btn:hover{
+    box-shadow:0px 8px 8px 0px rgba(0, 0, 0, 0.25) ;
+    width: 136px;
+    font-family: Jaldi;
+    font-size: 19px;
+    background-color: #D675F8;
+
+    
+}
+
+
+.active-button {
+    background-color: black;
+    /* Add any other styles you want here */
+}
+
+.p{
+    color: #FFF;
+    font-family: Jaldi;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.Signup.btn{
+    margin: 0%;
+    padding: 0%;
+    color: #08CBF5;
+    font-family: Jaldi;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.Signup.btn:hover{
+    margin: 0%;
+    padding: 0%;
+    color: #03b9e2;
+    font-family: Jaldi;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+
+.footer{
+    margin-top: 80px;
+    margin-bottom: 2px;
+}
+
+
+.footer-icon{
+    opacity: 0.8;
+    margin-top: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left:10% ;
+    margin-right:10% ;
+}
+
+
+.footer.logo{
+    margin-left: 50px;
+    margin-bottom: 40px;
+    width: 40px;
+    height: 23px;
+}
+
+.footer.logo svg{
+    margin-left: 15px;
+}
+
+.footer.logo p{
+    margin-top: 10px;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 800;
+    line-height: normal;
+
+}
+
+
+
+.help.section {
+    opacity: 0.8;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+
+.line{
+    display: flex;
+    left: 0;
+    stroke-width: 3px;
+    stroke: #AB0AAB;
+    width: 1221px;
+    flex-shrink: 0;
+}
+
+
+
+
+.lil.icons{
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+    padding-bottom: 10px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor:pointer;
+}
+
+.CopyRight {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0.6;
+    margin:20px;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 10px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.btn-sm{
+color: #08CBF5;
+font-family: Jaldi;
+font-size:18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin: 0%;
+padding: 0%;
+}
+
+
+
+
+@media screen and (max-width: 768px)  {
+    html{
+        background: #21041E;
+    }
+    html,body{
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+        background: linear-gradient(121deg, #21041E 20%, rgba(19, 6, 20, 0.79) 51.12%, rgba(83, 13, 89, 0.86) 55.21%,rgba(19, 6, 20, 0.79) 70%,rgba(83, 13, 89, 0.86) 80.21%, rgba(0, 0, 0, 0.62) 100%);
+        
+        
+    }
+    
+
+
+    section{
+        width: 100vw;
+        height: 120vh; /* fallback for browsers that don't support env() */
+        height: calc(var(--vh, 1vh) * 100); /* for browsers that support custom properties */
+        /* Ensure the section extends into the safe area */
+        padding-bottom: env(safe-area-inset-bottom);
+        box-sizing: border-box;
+
+        background: linear-gradient(121deg, #21041E 20%, rgba(19, 6, 20, 0.79) 51.12%, rgba(83, 13, 89, 0.86) 55.21%,rgba(19, 6, 20, 0.79) 70%,rgba(83, 13, 89, 0.86) 80.21%, rgba(0, 0, 0, 0.62) 100%);
+    }
+
+    #Login,
+    #Register{
+        color: #FFF;
+        font-family: Jaldi;
+        font-size: 11px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+    #button-container {
+        opacity: 0.8;
+        display:inline-flex;
+        margin-left: 70%;
+        margin-top: 0%;
+
+    }
+
+    .main-navbar{
+        margin-top: 20px;
+    }
+
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 60vh;
+    
+    }
+
+    .input-container{
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+        font-family: Jaldi;
+        font-size: 9xpx;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        }
+
+    label{
+        color: #FFF;
+        margin: 0%;
+        font-family: Jaldi;
+        font-size: 9px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 5px;
+    }
+    .input-container{margin-top: 5px;}
+
+    .input-container input{
+        border-radius: 12.5px;
+        width: 192px;
+        height: 34px;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    input[type="password"]{
+        border-radius: 2.5px;
+        width: 192px;
+        height: 34px;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    input[type="confirmPassword"]{
+        border-radius: 2.5px;
+        width: 192px;
+        height: 34px;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    #show-password svg{
+        width: 10px;
+
+    }
+     
+    #hide-password svg{
+        width: 10px;
+    }
+    .navbar-toggler {
+        opacity: 0.9;
+        margin-top: 20%;
+        width: 35px;
+        height: 30px;
+        outline: none;
+
+    }
+    .navbar-toggler:focus{
+        outline: none !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .nav-link:hover {
+        animation:  none;
+    }
+
+
+    .nav-link:focus {
+        animation: bounce2 2s ease-in forwards;
+    }
+
+    .navbar-nav{
+        display: flex;
+        justify-content: center;
+        margin-left: 20px;
+    }
+
+    .navbar-brand {
+        margin-left: 10px;
+        color: #FFF;
+        font-size: 30px;
+        position: absolute;
+        left: 0;
+    }
+    .navbar-brand svg{
+        width: 25.287px;
+        height: 19.894px;
+        flex-shrink: 0;
+    }
+
+    .navbar a{
+        margin-top: 35px;
+    }
+
+    .title p{
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+
+
+
+    .Login-form-main{
+        margin-top: 10px;
+        display: flex;
+        height: 40%;
+        color: rgb(118, 109, 109);
+    
+    }
+    
+    
+    
+
+    .footer{
+        margin-top: 4px;
+        margin-bottom: 2px;
+    }
+    
+    
+    .footer-icon{
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .icon-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left:10% ;
+        margin-right:10% ;
+    }
+    
+    
+    .footer.logo{
+        justify-content: center;
+        align-items: center;
+        padding: 0%;
+        margin-left: 5px;
+        margin-right: 5px;
+
+    }
+    
+    .footer.logo svg{
+        width: 15px;
+    }
+    
+    .footer.logo p{
+        margin: 0px;
+        font-family: Inter;
+        font-size: 9px;
+        font-style: italic;
+        font-weight: 800;
+        line-height: normal;
+    
+    }
+
+    .footer .row{
+        margin-top: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .help.section {
+        margin: 0%;
+        color: #FFF;
+        font-family: Inter;
+        font-size: 6px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    
+    .Submit.btn{
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        color: #000;
+        font-family: Jaldi;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        width: 61px;
+        height: 30px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        background: #6C0C8D;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(2px);
+    }
+
+    .p{
+        color: #FFF;
+        font-family: Jaldi;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        flex-shrink: 0;
+    }
+
+    .Signup.btn{
+        color: #08CBF5;
+        font-family: Jaldi;
+        font-size: 12.5px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+
+
+
+    .footer-icon{
+        align-items: center;
+        opacity: 0.8;
+        justify-content: center;
+        margin-top: 10px;
+
+    }
+
+    .lil.icons{
+        display: flex;
+        opacity: 0.8;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 50%;
+        border: 1px solid white;
+        cursor:pointer;
+        margin: 0%;
+        
+    }
+
+    .lil.icons svg{
+        width: 14px;
+        height: 14px;   
+        flex-shrink: 0;
+    }
+    
+
+
+    
+    input[type="password"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 9px;
+
+    }
+    input[type="email"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="text"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    .line{
+        display: flex;
+        stroke-width: 3px;
+        stroke: #AB0AAB;
+        width: 301px;
+        flex-shrink: 0;
+    }
+    .CopyRight {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 0.6;
+        margin:20px;
+        margin-top: 10px;
+        
+    }
+
+    .CopyRight svg{
+        width: 5px;
+        height: 5px;
+        flex-shrink: 0;
+    }
+
+    .CopyRight .content{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 5px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    .CopyRight .Armia{
+        color: #FFF;
+        font-family: Inter;
+        font-size: 7px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        margin-bottom: 20px;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 375px) {
+    section {
+     height: 100%;
+     width: 100%;
+    }
+
+
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 10%;
+    
+    }
+
+    .lil.icons svg{
+        width: 10px;
+        height: 10px;   
+        flex-shrink: 0;
+    }
+
+    .lil.icons{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 50%;
+        border: 1px solid white;
+        cursor:pointer;
+        margin: 0%;
+        
+    }
+}
+
+
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    section {
+     height: 100vh;
+     width: 100%;
+    }
+
+    .input-container input{
+        border-radius: 12.5px;
+        width: 192px;
+        height: 64px;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 70%;
+    
+    }
+
+    .lil.icons{
+        display: flex;
+        opacity: 0.8;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 50%;
+        border: 1px solid white;
+        cursor:pointer;
+        margin: 0%;
+        
+    }
+
+    .lil.icons svg{
+        width: 24px;
+        height: 24px;   
+        flex-shrink: 0;
+    }
+
+    .input-container label{
+        opacity: 0.9;
+    }
+    .input-container{
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+        font-family: Jaldi;
+        font-size: 9xpx;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        }
+
+    label{
+        color: rgba(255, 255, 255, 0.77);
+        margin: 0%;
+        font-family: Jaldi;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 10px;
+    }
+    .input-container{margin-top: 10px;}
+
+    .input-container input{
+        border-radius: 12.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    input[type="password"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="password"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="text"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="email"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    input[type="password"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 19px;
+
+    }
+    input[type="email"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 19px;
+    }
+    input[type="text"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 19px;
+    }
+    .line{
+        display: flex;
+        stroke-width: 3px;
+        stroke: #AB0AAB;
+        width: 901px;
+        flex-shrink: 0;
+    }
+    
+    
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1366px) {
+
+        section {
+     height: 100vh;
+     width: 100%;
+    }
+
+    .input-container input{
+        border-radius: 12.5px;
+        width: 192px;
+        height: 64px;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 70%;
+    
+    }
+
+    .lil.icons{
+        display: flex;
+        opacity: 0.8;
+        align-items: center;
+        justify-content: center;
+        padding: 6px;
+        border-radius: 50%;
+        border: 1px solid white;
+        cursor:pointer;
+        margin: 0%;
+        
+    }
+
+    .lil.icons svg{
+        width: 24px;
+        height: 24px;   
+        flex-shrink: 0;
+    }
+
+    .input-container label{
+        opacity: 0.9;
+    }
+    .input-container{
+        display: flex;
+        flex-direction: column;
+        color: #FFF;
+        font-family: Jaldi;
+        font-size: 9xpx;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        }
+
+    label{
+        color: rgba(255, 255, 255, 0.77);
+        margin: 0%;
+        font-family: Jaldi;
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 10px;
+    }
+    .input-container{margin-top: 10px;}
+
+    .input-container input{
+        border-radius: 12.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    input[type="password"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="password"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="text"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+    input[type="email"]{
+        border-radius: 2.5px;
+        width: 50vw;
+        flex-shrink: 0;
+        border-radius: 12.5px;
+        border-top: 1px solid #908FDD;
+        border-bottom: 1px solid #908FDD;
+        opacity: 0.65;
+        font-size: 9px;
+    }
+
+    input[type="password"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 19px;
+
+    }
+    input[type="email"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 19px;
+    }
+    input[type="text"]:focus {
+        outline:  0.1px solid #ac70c8;
+        box-shadow: none; 
+        color: #FFFFFF;
+        background: transparent;
+        opacity: 0.65;
+        font-size: 19px;
+    }
+    .line{
+        display: flex;
+        stroke-width: 3px;
+        stroke: #AB0AAB;
+        width: 901px;
+        flex-shrink: 0;
+    }
+    
+    
+}
+
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000;
+        color: #fff;
+        /* other styles for dark mode */
+    }
+}

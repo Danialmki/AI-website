@@ -1,0 +1,247 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'signup-style.css' %}?v=1.12"  type="text/css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jaldi&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width" initial-scale=1.0" maximum-scale=1.0" user-scalable=no" viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes" content="black-translucent">
+    <meta name="theme-color" content="#21041E">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>AI-Shopping</title>
+</head>
+<body>
+    <section>
+
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid main-navbar">
+                    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="47" height="30" viewBox="0 0 47 30" fill="none">
+                        <path d="M0 5.95311C0 2.6653 2.6653 0 5.95311 0H18.8397C23.5525 0 24.5185 6.66117 20 8L13.8526 10.0491C12.9833 10.3389 12.2561 10.9472 11.8173 11.7517C10.6594 13.8745 11.8658 16.5143 14.2288 17.028L21 18.5L32 21L44.3495 23.4699C45.8907 23.7781 47 25.1313 47 26.7029C47 28.5239 45.5239 30 43.7029 30H10C4.47715 30 0 25.5228 0 20V16.5V7.5V5.95311Z" fill="#FE85D5"/>
+                        <circle cx="6.75" cy="4.75" r="1.75" fill="#2B152B"/></svg></a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 40 40" fill="none">
+                            <path d="M6.66675 10H33.3334M6.66675 20H33.3334M21.6667 30H33.3334" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                    </button>
+
+
+                
+                        <div class="offcanvas offcanvas-top bg-transparent" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                            <ul class="navbar-nav ">
+        
+                                <li class="nav-item mx-lg-3">
+                                <a class="nav-link" aria-current="page" href="#">My Basket</a>
+                                </li>
+                                <li class="nav-item mx-lg-3">
+                                <a class="nav-link" href="#">Platforms</a>
+                                </li>
+                                <li class="nav-item mx-lg-3">
+                                <a class="nav-link" href="#">Home</a>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                        
+                </div>
+                <div class="" id="button-container">
+                    <button type="button" class="btn" id="Register">Register</button>
+                    <button type="button" class="btn" id="Login">Login</button>
+                    <div id="moving-border"></div>
+                </div> 
+        </div>  
+            </nav>
+        </div>
+
+
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show bg-transparent" role="alert">
+            <strong class="white" >Message1:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+
+
+    
+
+
+    <div class="container Login-form-main" >
+        <form action="{% url 'signup' %}" method="post">
+            {% csrf_token %}
+            <div class="title text-center"><p>Sign Up</p></div>
+            <div class="input-container">
+                <label for="text" class="form-label mx-2">Username</label>
+                <input type="text" class="form-control transparent-input rounded-4" autocomplete="on" id="username" name="username" placeholder="Username" required>
+            </div>
+
+            <div class="input-container">
+                <label for="text" class="form-label mx-2">Name and Surname</label>
+                <input type="text" class="form-control transparent-input rounded-4" autocomplete="on" name="fname" placeholder="Your name" required>
+            </div>
+            <div class="input-container">
+                <label for="email" class="form-label mx-2">Email address</label>
+                <input type="email" class="form-control transparent-input rounded-4" autocomplete="on" id="email" name="email" placeholder="Username" required>
+            </div>
+            <div class="input-container">
+                <label for="password" class="form-label mx-2">Password
+                </label>
+                <input type="password" class="form-control transparent-input rounded-4" autocomplete="on" id="pass1" name="pass1" placeholder="Password" required>
+                <a href="#" id="show-password"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <g opacity="0.65">
+                      <path d="M18.4024 9.49641C17.7158 8.04993 16.8987 6.87024 15.9512 5.95735L14.9574 6.9511C15.7678 7.72551 16.4736 8.7386 17.084 10.0003C15.459 13.3636 13.1523 14.9613 10 14.9613C9.05378 14.9613 8.18223 14.8156 7.38536 14.5241L6.3086 15.6009C7.41537 16.112 8.64584 16.3675 10 16.3675C13.7539 16.3675 16.5547 14.4124 18.4024 10.5023C18.4766 10.345 18.5152 10.1733 18.5152 9.99934C18.5152 9.82543 18.4766 9.65367 18.4024 9.49641ZM17.1607 3.23391L16.3281 2.40032C16.3136 2.38579 16.2964 2.37427 16.2774 2.3664C16.2585 2.35854 16.2381 2.35449 16.2176 2.35449C16.1971 2.35449 16.1767 2.35854 16.1578 2.3664C16.1388 2.37427 16.1215 2.38579 16.107 2.40032L13.9709 4.53547C12.7932 3.93391 11.4695 3.63313 10 3.63313C6.2461 3.63313 3.44532 5.58821 1.59766 9.49837C1.5234 9.65562 1.48488 9.82738 1.48488 10.0013C1.48488 10.1752 1.5234 10.347 1.59766 10.5042C2.33581 12.0589 3.22449 13.3051 4.26368 14.2427L2.19688 16.3089C2.1676 16.3382 2.15115 16.3779 2.15115 16.4194C2.15115 16.4608 2.1676 16.5005 2.19688 16.5298L3.03067 17.3636C3.05997 17.3929 3.0997 17.4093 3.14112 17.4093C3.18254 17.4093 3.22227 17.3929 3.25157 17.3636L17.1607 3.45501C17.1753 3.44049 17.1868 3.42326 17.1947 3.40429C17.2025 3.38532 17.2066 3.36499 17.2066 3.34446C17.2066 3.32393 17.2025 3.30359 17.1947 3.28462C17.1868 3.26566 17.1753 3.24842 17.1607 3.23391ZM2.91602 10.0003C4.54297 6.63704 6.84962 5.03938 10 5.03938C11.0652 5.03938 12.0338 5.22219 12.9125 5.59387L11.5395 6.96692C10.8892 6.61997 10.1446 6.49121 9.41564 6.59963C8.68663 6.70804 8.01177 7.0479 7.49061 7.56905C6.96946 8.09021 6.62961 8.76507 6.52119 9.49408C6.41277 10.2231 6.54154 10.9676 6.88848 11.6179L5.25919 13.2472C4.35743 12.4513 3.58008 11.373 2.91602 10.0003ZM7.73438 10.0003C7.73472 9.65591 7.8163 9.31645 7.97249 9.00949C8.12867 8.70254 8.35507 8.43676 8.63327 8.23373C8.91147 8.03071 9.23365 7.89618 9.57361 7.84107C9.91358 7.78595 10.2618 7.8118 10.5898 7.91653L7.83809 10.6683C7.76912 10.4523 7.73413 10.227 7.73438 10.0003Z" fill="white"/>
+                      <path d="M9.92187 12.1879C9.85429 12.1879 9.78769 12.1848 9.72167 12.1787L8.69003 13.2104C9.31052 13.448 9.98656 13.5008 10.6364 13.3624C11.2863 13.224 11.8821 12.9003 12.352 12.4305C12.8218 11.9607 13.1455 11.3648 13.2839 10.7149C13.4223 10.0651 13.3695 9.38904 13.1318 8.76855L12.1002 9.8002C12.1062 9.86621 12.1094 9.93281 12.1094 10.0004C12.1095 10.2877 12.053 10.5722 11.9432 10.8377C11.8333 11.1032 11.6722 11.3444 11.469 11.5475C11.2659 11.7507 11.0246 11.9118 10.7592 12.0217C10.4937 12.1316 10.2092 12.188 9.92187 12.1879Z" fill="white"/>
+                    </g></svg></a>
+                  <a href="#" id="hide-password"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+  <g opacity="0.65">
+    <path d="M18.4024 9.49609C16.5508 5.5957 13.752 3.63281 10 3.63281C6.2461 3.63281 3.44922 5.5957 1.59766 9.49805C1.5234 9.65531 1.48488 9.82706 1.48488 10.001C1.48488 10.1749 1.5234 10.3466 1.59766 10.5039C3.44922 14.4043 6.24805 16.3672 10 16.3672C13.7539 16.3672 16.5508 14.4043 18.4024 10.502C18.5527 10.1855 18.5527 9.81836 18.4024 9.49609ZM10 14.9609C6.84962 14.9609 4.54297 13.3633 2.91602 10C4.54297 6.63672 6.84962 5.03906 10 5.03906C13.1504 5.03906 15.457 6.63672 17.084 10C15.459 13.3633 13.1523 14.9609 10 14.9609ZM9.92188 6.5625C8.02344 6.5625 6.48438 8.10156 6.48438 10C6.48438 11.8984 8.02344 13.4375 9.92188 13.4375C11.8203 13.4375 13.3594 11.8984 13.3594 10C13.3594 8.10156 11.8203 6.5625 9.92188 6.5625ZM9.92188 12.1875C8.7129 12.1875 7.73438 11.209 7.73438 10C7.73438 8.79102 8.7129 7.8125 9.92188 7.8125C11.1309 7.8125 12.1094 8.79102 12.1094 10C12.1094 11.209 11.1309 12.1875 9.92188 12.1875Z" fill="white"/>
+  </g>
+</svg></a>
+            </div>
+            <div class="input-container">
+                <label for="confirmPassword" class="form-label mx-2 ">Confirm Password</label>
+                <input type="password" class="form-control transparent-input rounded-4" autocomplete="on" id="pass2" name="pass2" placeholder="Password" required>
+                <div class="text" id="passwordError" style="display:none; color:red; font-size: 0.3em; margin-left: 10px;">Incorrect password</div>
+            </div>
+            <div class="Button container">
+                <button type="submit" class="mt-3 btn Submit btn" id="submitButton">Submit</button>
+            </div>
+            <div class="p text-center mt-3">
+                <div class="p">Go for <a class="Signup btn" href="{% url 'signin' %}">Log in </a></div>
+                <div class="p">need help? <a class="Signup btn" href="#">Contact us</a> </div>
+                
+            </div>
+        </form>
+
+
+        <script>
+
+        </script>
+
+
+        
+
+
+
+
+
+
+
+        <div class="container-fluid footer">
+    
+            <div class="row">
+                <div class="col footer logo">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="47" height="30" viewBox="0 0 47 30" fill="none">
+                    <path d="M0 5.95311C0 2.6653 2.6653 0 5.95311 0H18.8397C23.5525 0 24.5185 6.66117 20 8L13.8526 10.0491C12.9833 10.3389 12.2561 10.9472 11.8173 11.7517C10.6594 13.8745 11.8658 16.5143 14.2288 17.028L21 18.5L32 21L44.3495 23.4699C45.8907 23.7781 47 25.1313 47 26.7029C47 28.5239 45.5239 30 43.7029 30H10C4.47715 30 0 25.5228 0 20V16.5V7.5V5.95311Z" fill="#FE85D5"/>
+                    <circle cx="6.75" cy="4.75" r="1.75" fill="#2B152B"/></svg>
+                    <div>
+                        <p>Premium</p>
+                    </div>
+        
+                </div>
+                    
+                <div class="col help section ">
+                    SERVICES
+                </div>
+                <div class="col help section">
+                    ABOUT
+                </div>
+                <div class="col help section">
+                    SUPPORT
+                </div>
+                <div class="col help section">
+                    CONTACT
+                </div>
+            </div>
+    
+        </div>
+
+
+        <div class="line">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1325" height="4" viewBox="0 0 1325 4" fill="none">
+            <path d="M2 2H1323" stroke="url(#paint0_linear_136_141)" stroke-width="3" stroke-linecap="round"/>
+            <defs><linearGradient id="paint0_linear_136_141" x1="2" y1="3.05761" x2="1322.98" y2="3.08468" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#AB0AAB"/>
+                <stop offset="0.34375" stop-color="#DDDBDD" stop-opacity="0.65625"/>
+                <stop offset="0.734375" stop-color="#423C42" stop-opacity="0.265625"/>
+                <stop offset="1" stop-color="#340234" stop-opacity="0"/></linearGradient>
+            </defs></svg>
+        </div>
+
+
+
+            <div class="container-fluid bottom-0">
+                <div class="container text-center footer-icon">
+                    <div class="row justify-content-center mt-sm-0 mx-lg-5 icon-all">
+                        <div class="col-auto">
+                        <a href="#" class="col lil icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <g opacity="0.8">
+                                <path d="M12.5 7.49291C9.729 7.49291 7.49268 9.72924 7.49268 12.5002C7.49268 15.2712 9.729 17.5076 12.5 17.5076C15.271 17.5076 17.5073 15.2712 17.5073 12.5002C17.5073 9.72924 15.271 7.49291 12.5 7.49291ZM12.5 15.7546C10.708 15.7546 9.24561 14.2922 9.24561 12.5002C9.24561 10.7082 10.708 9.24584 12.5 9.24584C14.292 9.24584 15.7544 10.7082 15.7544 12.5002C15.7544 14.2922 14.292 15.7546 12.5 15.7546ZM17.7124 6.12084C17.0654 6.12084 16.543 6.6433 16.543 7.29028C16.543 7.93725 17.0654 8.45971 17.7124 8.45971C18.3594 8.45971 18.8818 7.93969 18.8818 7.29028C18.882 7.13665 18.8519 6.9845 18.7932 6.84253C18.7345 6.70056 18.6484 6.57156 18.5397 6.46293C18.4311 6.3543 18.3021 6.26817 18.1602 6.20947C18.0182 6.15077 17.866 6.12065 17.7124 6.12084ZM22.2607 12.5002C22.2607 11.1526 22.273 9.81713 22.1973 8.47192C22.1216 6.90942 21.7651 5.5227 20.6226 4.38012C19.4775 3.2351 18.0933 2.8811 16.5308 2.80541C15.1831 2.72973 13.8477 2.74194 12.5024 2.74194C11.1548 2.74194 9.81934 2.72973 8.47412 2.80541C6.91162 2.8811 5.5249 3.23754 4.38233 4.38012C3.23731 5.52514 2.8833 6.90942 2.80762 8.47192C2.73193 9.81957 2.74414 11.155 2.74414 12.5002C2.74414 13.8455 2.73193 15.1833 2.80762 16.5286C2.8833 18.0911 3.23975 19.4778 4.38233 20.6204C5.52735 21.7654 6.91162 22.1194 8.47412 22.1951C9.82178 22.2707 11.1572 22.2585 12.5024 22.2585C13.8501 22.2585 15.1855 22.2707 16.5308 22.1951C18.0933 22.1194 19.48 21.7629 20.6226 20.6204C21.7676 19.4753 22.1216 18.0911 22.1973 16.5286C22.2754 15.1833 22.2607 13.8479 22.2607 12.5002ZM20.1123 18.2571C19.9341 18.7014 19.7192 19.0334 19.375 19.3752C19.0308 19.7195 18.7012 19.9343 18.2568 20.1125C16.9727 20.6228 13.9233 20.5081 12.5 20.5081C11.0767 20.5081 8.0249 20.6228 6.74072 20.115C6.29639 19.9368 5.96436 19.7219 5.62256 19.3777C5.27832 19.0334 5.06348 18.7039 4.88526 18.2595C4.37744 16.9729 4.49219 13.9236 4.49219 12.5002C4.49219 11.0769 4.37744 8.02514 4.88526 6.74096C5.06348 6.29662 5.27832 5.96459 5.62256 5.6228C5.9668 5.281 6.29639 5.06371 6.74072 4.88549C8.0249 4.37768 11.0767 4.49243 12.5 4.49243C13.9233 4.49243 16.9751 4.37768 18.2593 4.88549C18.7036 5.06371 19.0356 5.27856 19.3774 5.6228C19.7217 5.96703 19.9365 6.29662 20.1147 6.74096C20.6226 8.02514 20.5078 11.0769 20.5078 12.5002C20.5078 13.9236 20.6226 16.9729 20.1123 18.2571Z" fill="white"/></g></svg>
+                        </a>
+                        </div>
+                        <div class="col-auto justify-content-center">
+                        <a href="#" class="col lil icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <g opacity="0.8">
+                                    <path d="M20.3674 3.12182C20.105 3.13402 19.8578 3.21032 19.6381 3.29577H19.635C19.4122 3.38427 18.3533 3.82982 16.745 4.50426C15.1367 5.18175 13.0493 6.06066 10.9772 6.93346C6.83899 8.67602 2.771 10.3911 2.771 10.3911L2.81983 10.3728C2.81983 10.3728 2.53906 10.4643 2.2461 10.6658C2.09656 10.7634 1.93176 10.8977 1.78833 11.1083C1.6449 11.3188 1.52893 11.6423 1.57166 11.975C1.64185 12.5395 2.00806 12.8783 2.27051 13.0644C2.53601 13.2537 2.78931 13.3422 2.78931 13.3422H2.79541L6.61011 14.6269C6.78101 15.1763 7.77283 18.4355 8.01087 19.1863C8.15125 19.6349 8.28858 19.9156 8.45947 20.1293C8.54187 20.2391 8.63953 20.3307 8.75549 20.4039C8.80127 20.4314 8.8501 20.4527 8.89893 20.4711C8.91419 20.4802 8.92944 20.4833 8.94776 20.4863L8.90808 20.4772C8.92029 20.4802 8.92945 20.4894 8.9386 20.4924C8.96912 20.5016 8.99048 20.5046 9.03015 20.5107C9.6344 20.6938 10.1196 20.3185 10.1196 20.3185L10.1471 20.2971L12.3993 18.2463L16.1743 21.1424L16.2598 21.1791C17.0471 21.5239 17.8436 21.3317 18.2648 20.9929C18.689 20.6511 18.8538 20.2147 18.8538 20.2147L18.8812 20.1445L21.7987 5.20006C21.8811 4.8308 21.9025 4.48595 21.8109 4.15026C21.7194 3.81457 21.4844 3.50023 21.2006 3.33239C20.9137 3.16149 20.6299 3.10961 20.3674 3.12182ZM20.2881 4.72399C20.285 4.77282 20.2942 4.76671 20.2728 4.86132V4.87047L17.3828 19.6593C17.3706 19.6807 17.3492 19.7264 17.2913 19.7722C17.2302 19.821 17.1814 19.8516 16.9281 19.7508L12.3108 16.2108L9.52149 18.7529L10.1074 15.0115C10.1074 15.0115 17.3401 8.27013 17.6514 7.98021C17.9626 7.6903 17.8589 7.62926 17.8589 7.62926C17.8803 7.27526 17.3889 7.5255 17.3889 7.5255L7.87659 13.4184L7.87354 13.4032L3.31421 11.8682V11.8651C3.31116 11.8651 3.30506 11.8621 3.302 11.8621C3.30506 11.8621 3.32642 11.8529 3.32642 11.8529L3.35083 11.8407L3.37525 11.8315C3.37525 11.8315 7.44629 10.1164 11.5845 8.37389C13.6566 7.50109 15.744 6.62218 17.3492 5.94469C18.9545 5.27025 20.1416 4.77587 20.2087 4.7484C20.2728 4.72399 20.2423 4.72399 20.2881 4.72399Z" fill="white"/>
+                                </g>
+                                </svg>
+                        </a>
+                        </div>
+                        <div class="col-auto justify-content-center">
+                        <a href="#" class="col lil icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <g opacity="0.8">
+                                    <path d="M3.125 8.33301L11.3438 13.8122C11.6861 14.0406 12.0884 14.1625 12.5 14.1625C12.9116 14.1625 13.3139 14.0406 13.6562 13.8122L21.875 8.33301M5.20833 19.7913H19.7917C20.3442 19.7913 20.8741 19.5718 21.2648 19.1811C21.6555 18.7904 21.875 18.2605 21.875 17.708V7.29134C21.875 6.73881 21.6555 6.2089 21.2648 5.8182C20.8741 5.4275 20.3442 5.20801 19.7917 5.20801H5.20833C4.6558 5.20801 4.12589 5.4275 3.73519 5.8182C3.34449 6.2089 3.125 6.73881 3.125 7.29134V17.708C3.125 18.2605 3.34449 18.7904 3.73519 19.1811C4.12589 19.5718 4.6558 19.7913 5.20833 19.7913Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </g>
+                                </svg></a>
+                        </div>
+
+                        <div class="col-auto justify-content-center">
+                            <a href="#" class="col lil icons">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+                                <g opacity="0.8">
+                                    <path d="M22.0215 18.2621C21.2461 17.4809 19.3682 16.3407 18.457 15.8813C17.2705 15.2836 17.1728 15.2348 16.2402 15.9277C15.6182 16.3901 15.2046 16.8031 14.4766 16.6479C13.7485 16.4926 12.1665 15.6171 10.7812 14.2362C9.39599 12.8554 8.46972 11.2275 8.31396 10.5019C8.1582 9.77628 8.57812 9.36759 9.03613 8.74406C9.68164 7.86515 9.63281 7.71867 9.08105 6.53214C8.65088 5.60929 7.47754 3.74894 6.69336 2.97746C5.85449 2.14884 5.85449 2.29533 5.31396 2.51994C4.87391 2.70509 4.45174 2.93015 4.05273 3.1923C3.27148 3.71134 2.83789 4.1425 2.53467 4.79044C2.23144 5.43839 2.09521 6.95744 3.66113 9.80216C5.22705 12.6469 6.32568 14.1015 8.59961 16.3691C10.8735 18.6366 12.6221 19.8559 15.1782 21.2895C18.3403 23.0605 19.5532 22.7152 20.2031 22.4125C20.853 22.1098 21.2861 21.6801 21.8062 20.8988C22.069 20.5005 22.2945 20.0788 22.48 19.6391C22.7051 19.1005 22.8516 19.1005 22.0215 18.2621Z" stroke="white" stroke-width="1.5" stroke-miterlimit="10"/>
+                                </g>
+                                </svg>
+                            </a>
+                        </div>
+                </div>
+
+                <div class="col CopyRight">
+                    <div class="h6 content"><svg style="margin-bottom: 2px;" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="none">
+                        <g opacity="0.6">
+                          <path d="M8.5 1.0625C4.39277 1.0625 1.0625 4.39277 1.0625 8.5C1.0625 12.6072 4.39277 15.9375 8.5 15.9375C12.6072 15.9375 15.9375 12.6072 15.9375 8.5C15.9375 4.39277 12.6072 1.0625 8.5 1.0625ZM8.5 14.6758C5.09004 14.6758 2.32422 11.91 2.32422 8.5C2.32422 5.09004 5.09004 2.32422 8.5 2.32422C11.91 2.32422 14.6758 5.09004 14.6758 8.5C14.6758 11.91 11.91 14.6758 8.5 14.6758ZM8.59297 5.83213C9.47285 5.83213 10.0705 6.39326 10.1369 7.2167C10.1419 7.28643 10.2 7.33955 10.2697 7.33955H11.211C11.2542 7.33955 11.2891 7.30469 11.2891 7.26152C11.2891 5.82217 10.1535 4.81445 8.58799 4.81445C6.76348 4.81445 5.71094 6.04629 5.71094 8.08164V8.9499C5.71094 10.9703 6.76348 12.1855 8.58799 12.1855C10.1485 12.1855 11.2891 11.2094 11.2891 9.83809C11.2891 9.79492 11.2542 9.76006 11.211 9.76006H10.2681C10.1983 9.76006 10.1419 9.81318 10.1353 9.88125C10.0655 10.6466 9.46953 11.1729 8.59131 11.1729C7.50723 11.1729 6.89629 10.3776 6.89629 8.95488V8.08164C6.89795 6.6373 7.51055 5.83213 8.59297 5.83213Z" fill="white"/>
+                        </g>
+                      </svg>
+                      Copyright.All rights reserved.
+                    </div>
+                    <div class="p Armia">Designed by ArmiaBidel</div>
+                </div>
+            </div>
+
+            </div>
+
+            
+
+    </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+<!-- <script type="text/javascript" src="app.js"></script>-->
+</body>
+   
+</html>
